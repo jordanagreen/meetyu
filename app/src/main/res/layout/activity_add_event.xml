@@ -24,7 +24,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Title"
             android:id="@+id/addEventTitle" />
 
     </TableRow>
@@ -44,8 +43,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/addEventLocation"
-            android:hint="Location" />
+            android:id="@+id/addEventLocation" />
     </TableRow>
 
     <TableRow
@@ -63,9 +61,7 @@
             android:layout_height="wrap_content"
             android:inputType="time"
             android:ems="10"
-            android:id="@+id/addEventTime"
-
-            android:hint="Start Time"/>
+            android:id="@+id/addEventTime"/>
     </TableRow>
 
     <TableRow
@@ -75,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/event_needed"
+            android:text="@string/event_people"
             android:id="@+id/addEventNeeded"/>
         <EditText
             android:layout_width="fill_parent"
@@ -116,16 +112,13 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/addEventDescription"
-
-            android:hint="Description"
-           />
+            android:id="@+id/addEventDescription" />
     </TableRow>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="@string/add_event"
         android:id="@+id/addEventButton" />
 
 </LinearLayout>

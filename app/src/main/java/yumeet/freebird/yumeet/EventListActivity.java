@@ -56,8 +56,10 @@ public class EventListActivity extends AppCompatActivity {
                 String description = data.getStringExtra(AddEventActivity.DESC_KEY);
                 int peopleNeeded = data.getIntExtra(AddEventActivity.NEEDED_KEY, 0);
                 int peopleHave = data.getIntExtra(AddEventActivity.HAVE_KEY, 0);
+                String startTime = data.getStringExtra(AddEventActivity.START_KEY);
 //                Log.d(TAG, title + " " + location + " " + description);
-                Event event = new Event(title, description, location, peopleNeeded, peopleHave);
+                Event event = new Event(title, description, location, peopleNeeded, peopleHave,
+                        startTime);
                 eventManager.addEvent(event);
             }
         }

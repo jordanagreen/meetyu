@@ -19,11 +19,11 @@ public class EventManager {
     private ArrayAdapter<Event> adapter;
 
     private Event[] testEvents = {
-            new Event("Basketball", "A game of basketball", "Rubin Gym", 12, 6),
-            new Event("Jamming", "Jamming with some friends", "Heights Lounge", 0, 0),
-            new Event("Movie", "Watching a movie", "My dorm room", 3, 0),
-            new Event("Quidditch", "A game of Quidditch", "Central park", 14, 13),
-            new Event("DND", "Dungeons and Dragons", "Parents' basement", 4, 2)
+            new Event("Basketball", "A game of basketball", "Rubin Gym", 12, 6, "4:00"),
+            new Event("Jamming", "Jamming with some friends", "Heights Lounge", 0, 0, "18:00"),
+            new Event("Movie", "Watching a movie", "My dorm room", 3, 0, "10:00"),
+            new Event("Quidditch", "A game of Quidditch", "Central park", 14, 13, "3:00"),
+            new Event("DND", "Dungeons and Dragons", "Parents' basement", 4, 2, "0:00")
     };
 
     private EventManager(){
@@ -55,7 +55,7 @@ public class EventManager {
     void addEvent(Event event){
         events.add(event);
         adapter.notifyDataSetChanged();
-        Log.d(TAG, "Event added");
+//        Log.d(TAG, "Event added");
     }
 
     Event removeEvent(int i){

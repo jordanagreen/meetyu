@@ -15,7 +15,7 @@ public class EventActivity extends AppCompatActivity {
     private TextView locationText;
     private TextView startText;
     private TextView peopleText;
-    private TextView currentPeopleText;
+//    private TextView currentPeopleText;
 
     private Event event;
 
@@ -25,13 +25,11 @@ public class EventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event);
         Intent intent = getIntent();
 
-
-//        titleText = (TextView) findViewById(R.id.eventTitle);
         descText = (TextView) findViewById(R.id.eventDescription);
         locationText = (TextView) findViewById(R.id.eventLocation);
-//        startText = (TextView) findViewById(R.id.eventStartTime);
+        startText = (TextView) findViewById(R.id.eventStartTime);
         peopleText = (TextView) findViewById(R.id.eventPeopleNeeded);
-        currentPeopleText = (TextView) findViewById(R.id.eventCurrentPeople);
+//        currentPeopleText = (TextView) findViewById(R.id.eventCurrentPeople);
 
         int eventId = intent.getIntExtra(EventFragmentList.EVENT_ID_KEY, 0);
 
@@ -50,8 +48,10 @@ public class EventActivity extends AppCompatActivity {
 //        titleText.setText(event.getTitle());
         descText.setText(event.getDescription());
         locationText.setText(event.getLocation());
-        peopleText.setText(Integer.toString(event.getPeopleNeeded()));
-        currentPeopleText.setText(Integer.toString(event.getPeopleHave()));
+        String people = event.getPeopleHave() + "/" + event.getPeopleNeeded();
+        peopleText.setText(people);
+//        currentPeopleText.setText(Integer.toString(event.getPeopleHave()));
+        startText.setText(event.getStartTime().toString());
     }
 
     public void joinEvent(View v){

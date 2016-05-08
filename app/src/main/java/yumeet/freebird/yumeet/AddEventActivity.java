@@ -18,6 +18,7 @@ public class AddEventActivity extends AppCompatActivity {
     static final String DESC_KEY = "description";
     static final String NEEDED_KEY = "needed";
     static final String HAVE_KEY = "have";
+    static final String START_KEY = "start";
 
     private EditText titleText;
     private EditText locationText;
@@ -59,6 +60,7 @@ public class AddEventActivity extends AppCompatActivity {
                 intent.putExtra(DESC_KEY, description);
                 intent.putExtra(NEEDED_KEY, peopleNeeded);
                 intent.putExtra(HAVE_KEY, peopleThere);
+                intent.putExtra(START_KEY, startTime);
                 setResult(RESULT_OK, intent);
                 finish();
             }

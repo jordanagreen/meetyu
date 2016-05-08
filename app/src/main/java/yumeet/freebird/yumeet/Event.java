@@ -1,7 +1,5 @@
 package yumeet.freebird.yumeet;
 
-import java.util.Date;
-
 /**
  * Created by Jordan on 5/8/2016.
  */
@@ -12,16 +10,17 @@ public class Event {
     private String location;
     private int peopleNeeded;
     private int peopleHave;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
 
-    Event(String name, String description, String location, int peopleNeeded, int peopleHave){
+    Event(String name, String description, String location, int peopleNeeded, int peopleHave,
+          String startTime){
         this.title = name;
         this.description = description;
         this.location = location;
         this.peopleNeeded = peopleNeeded;
         this.peopleHave = peopleHave;
-//        this.startTime = startTime;
+        this.startTime = startTime;
 //        this.endTime = endTime;
     }
 
@@ -45,11 +44,11 @@ public class Event {
         return  peopleHave;
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
