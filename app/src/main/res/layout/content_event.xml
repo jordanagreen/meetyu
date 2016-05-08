@@ -113,4 +113,11 @@
         android:onClick="joinEvent"
         android:id="@+id/joinButton"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finishEvent"
+        android:onClick="deleteEvent"
+        android:id="@+id/deleteButton"/>
+
 </LinearLayout>

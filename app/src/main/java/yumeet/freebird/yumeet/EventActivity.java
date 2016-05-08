@@ -62,4 +62,9 @@ public class EventActivity extends AppCompatActivity {
 //        finish();
     }
 
+    public void deleteEvent(View v){
+        EventManager.getManager().removeEvent(event);
+        finish();
+    }
+
 }

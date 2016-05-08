@@ -1,6 +1,5 @@
 package yumeet.freebird.yumeet;
 
-import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
@@ -58,11 +57,9 @@ public class EventManager {
 //        Log.d(TAG, "Event added");
     }
 
-    Event removeEvent(int i){
-        Event event = adapter.getItem(i);
-        adapter.remove(event);
+    void removeEvent(Event event){
+        events.remove(event);
         adapter.notifyDataSetChanged();
-        return event;
     }
 
 }
