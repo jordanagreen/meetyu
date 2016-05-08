@@ -21,6 +21,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/eventWhere"
             android:textAppearance="?android:textAppearanceLarge"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:text="@string/event_where"/>
         <TextView
             android:layout_width="wrap_content"
@@ -37,6 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/event_what"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/eventDesc"
             android:textAppearance="?android:textAppearanceLarge"
             />
@@ -53,6 +57,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:text="@string/event_people"
             android:id="@+id/eventNeeded"
             android:textAppearance="?android:textAppearanceLarge"
@@ -87,6 +93,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:text="@string/event_start"
             android:id="@+id/eventStart"
             android:textAppearance="?android:textAppearanceLarge"
