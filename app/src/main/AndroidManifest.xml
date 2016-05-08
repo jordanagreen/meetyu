@@ -10,16 +10,15 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".EventListActivity"
-            android:label="@string/title_activity_event_list">
-
-        </activity>
+            android:label="@string/title_activity_event_list"></activity>
         <activity
             android:name=".EventActivity"
             android:label="@string/title_activity_event_list" />
         <activity
             android:name=".AddEventActivity"
             android:label="@string/title_activity_add_event" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="MeetYU">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".JoinEventActivity"></activity>
     </application>
 
 </manifest>
