@@ -91,4 +91,12 @@
         android:layout_alignLeft="@+id/addEventLocation"
         android:layout_alignStart="@+id/addEventLocation" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/addEventButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

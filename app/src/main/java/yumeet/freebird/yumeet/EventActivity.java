@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toolbar;
-
-import junit.framework.TestCase;
 
 public class EventActivity extends AppCompatActivity {
 
@@ -44,6 +41,7 @@ public class EventActivity extends AppCompatActivity {
     }
 
     private void setEventText(Event event){
+        setTitle(event.getTitle());
         titleText.setText(event.getTitle());
         descText.setText(event.getDescription());
         locationText.setText(event.getLocation());

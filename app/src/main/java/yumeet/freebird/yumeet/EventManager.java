@@ -1,5 +1,9 @@
 package yumeet.freebird.yumeet;
 
+import android.util.Log;
+import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,8 +12,11 @@ import java.util.List;
  */
 public class EventManager {
 
+    private static final String TAG = "EventManager";
+
     private static EventManager instance;
     private List<Event> events;
+    private ArrayAdapter<Event> adapter;
 
     private Event[] testEvents = {
             new Event("Basketball", "A game of basketball", "Rubin Gym"),
@@ -20,8 +27,14 @@ public class EventManager {
     };
 
     private EventManager(){
-//        events = new ArrayList<>();
-        events = Arrays.asList(testEvents);
+        events = new ArrayList<>();
+        events.addAll(Arrays.asList(testEvents));
+    }
+
+    void setAdapter(ArrayAdapter<Event> adapter){
+        if (this.adapter == null){
+            this.adapter = adapter;
+        }
     }
 
     static EventManager getManager(){
@@ -36,15 +49,20 @@ public class EventManager {
     }
 
     Event getEvent(int i){
-        return events.get(i);
+        return adapter.getItem(i);
     }
 
     void addEvent(Event event){
         events.add(event);
+        adapter.notifyDataSetChanged();
+        Log.d(TAG, "Event added");
     }
 
     Event removeEvent(int i){
-        return events.remove(i);
+        Event event = adapter.getItem(i);
+        adapter.remove(event);
+        adapter.notifyDataSetChanged();
+        return event;
     }
 
 }
