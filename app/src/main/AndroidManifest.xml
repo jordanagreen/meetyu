@@ -19,7 +19,8 @@
             android:label="@string/title_activity_add_event" />
         <activity
             android:name=".MainActivity"
-            android:label="MeetYU">
+            android:label="MeetYU"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
