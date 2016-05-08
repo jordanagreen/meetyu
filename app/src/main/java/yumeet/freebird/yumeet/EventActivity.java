@@ -57,7 +57,9 @@ public class EventActivity extends AppCompatActivity {
     public void joinEvent(View v){
         event.joinEvent();
         Toast.makeText(EventActivity.this, "See you there!", Toast.LENGTH_SHORT).show();
-        finish();
+        Intent intent = new Intent(this, JoinEventActivity.class);
+        startActivity(intent);
+//        finish();
     }
 
 }
