@@ -19,11 +19,11 @@ public class EventManager {
     private ArrayAdapter<Event> adapter;
 
     private Event[] testEvents = {
-            new Event("Basketball", "A game of basketball", "Rubin Gym"),
-            new Event("Jamming", "Jamming with some friends", "Heights Lounge"),
-            new Event("Movie", "Watching a movie", "My dorm room"),
-            new Event("Quidditch", "A game of Quidditch", "Central park"),
-            new Event("DND", "Dungeons and Dragons", "Parents' basement")
+            new Event("Basketball", "A game of basketball", "Rubin Gym", 12, 6),
+            new Event("Jamming", "Jamming with some friends", "Heights Lounge", 0, 0),
+            new Event("Movie", "Watching a movie", "My dorm room", 3, 0),
+            new Event("Quidditch", "A game of Quidditch", "Central park", 14, 13),
+            new Event("DND", "Dungeons and Dragons", "Parents' basement", 4, 2)
     };
 
     private EventManager(){

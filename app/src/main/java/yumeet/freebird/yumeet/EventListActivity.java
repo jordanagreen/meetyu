@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -55,8 +54,10 @@ public class EventListActivity extends AppCompatActivity {
                 String title = data.getStringExtra(AddEventActivity.TITLE_KEY);
                 String location = data.getStringExtra(AddEventActivity.LOCATION_KEY);
                 String description = data.getStringExtra(AddEventActivity.DESC_KEY);
-                Log.d(TAG, title + " " + location + " " + description);
-                Event event = new Event(title, description, location);
+                int peopleNeeded = data.getIntExtra(AddEventActivity.NEEDED_KEY, 0);
+                int peopleHave = data.getIntExtra(AddEventActivity.HAVE_KEY, 0);
+//                Log.d(TAG, title + " " + location + " " + description);
+                Event event = new Event(title, description, location, peopleNeeded, peopleHave);
                 eventManager.addEvent(event);
             }
         }

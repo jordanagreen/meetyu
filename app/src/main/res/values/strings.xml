@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">YUMeet</string>
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
     <string name="title_activity_event_list">What\'s Going On</string>
     <string name="title_activity_add_event">Add an Event</string>
     <string name="event_where">Where: </string>
     <string name="event_when">When: </string>
     <string name="event_what">What: </string>
     <string name="event_details">Details: </string>
+    <string name="event_needed">People Needed: </string>
+    <string name="event_have">People There: </string>
 </resources>

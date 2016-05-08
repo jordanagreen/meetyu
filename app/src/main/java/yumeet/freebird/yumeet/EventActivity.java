@@ -26,7 +26,7 @@ public class EventActivity extends AppCompatActivity {
 //        titleText = (TextView) findViewById(R.id.eventTitle);
         descText = (TextView) findViewById(R.id.eventDescription);
         locationText = (TextView) findViewById(R.id.eventLocation);
-        startText = (TextView) findViewById(R.id.eventStartTime);
+//        startText = (TextView) findViewById(R.id.eventStartTime);
         peopleText = (TextView) findViewById(R.id.eventPeopleNeeded);
         currentPeopleText = (TextView) findViewById(R.id.eventCurrentPeople);
 
@@ -45,7 +45,8 @@ public class EventActivity extends AppCompatActivity {
 //        titleText.setText(event.getTitle());
         descText.setText(event.getDescription());
         locationText.setText(event.getLocation());
-
+        peopleText.setText(Integer.toString(event.getPeopleNeeded()));
+        currentPeopleText.setText(Integer.toString(event.getPeopleHave()));
     }
 
 
