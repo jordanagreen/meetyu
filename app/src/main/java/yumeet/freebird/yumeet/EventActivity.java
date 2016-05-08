@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class EventActivity extends AppCompatActivity {
 
-    private TextView titleText;
+//    private TextView titleText;
     private TextView descText;
     private TextView locationText;
     private TextView startText;
@@ -23,7 +23,7 @@ public class EventActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        titleText = (TextView) findViewById(R.id.eventTitle);
+//        titleText = (TextView) findViewById(R.id.eventTitle);
         descText = (TextView) findViewById(R.id.eventDescription);
         locationText = (TextView) findViewById(R.id.eventLocation);
         startText = (TextView) findViewById(R.id.eventStartTime);
@@ -42,7 +42,7 @@ public class EventActivity extends AppCompatActivity {
 
     private void setEventText(Event event){
         setTitle(event.getTitle());
-        titleText.setText(event.getTitle());
+//        titleText.setText(event.getTitle());
         descText.setText(event.getDescription());
         locationText.setText(event.getLocation());
 
