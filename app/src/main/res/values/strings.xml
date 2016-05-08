@@ -14,4 +14,5 @@
     <string name="join_event">Join Event</string>
     <string name="add_event">Add</string>
     <string name="finishEvent">Finish Event</string>
+    <string name="searchHint">Search events</string>
 </resources>
