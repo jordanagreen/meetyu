@@ -3,7 +3,10 @@ package yumeet.freebird.yumeet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EventActivity extends AppCompatActivity {
 
@@ -14,7 +17,7 @@ public class EventActivity extends AppCompatActivity {
     private TextView peopleText;
     private TextView currentPeopleText;
 
-//    private int eventId;
+    private Event event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +35,17 @@ public class EventActivity extends AppCompatActivity {
 
         int eventId = intent.getIntExtra(EventFragmentList.EVENT_ID_KEY, 0);
 
-        Event event = EventManager.getManager().getEvent(eventId);
-        setEventText(event);
+        event = EventManager.getManager().getEvent(eventId);
+        setEventText();
 
-//        TextView titleTextView = (TextView) findViewById(R.id.eventTitle);
-//        Event event = EventManager.getManager().getEvent(eventId);
-//        titleTextView.setText(event.getDescription());
+        if (event.getPeopleHave() == event.getPeopleNeeded()){
+            Button button = (Button) findViewById(R.id.joinButton);
+            button.setClickable(false);
+            button.setAlpha(.3f);
+        }
     }
 
-    private void setEventText(Event event){
+    private void setEventText(){
         setTitle(event.getTitle());
 //        titleText.setText(event.getTitle());
         descText.setText(event.getDescription());
@@ -49,6 +54,10 @@ public class EventActivity extends AppCompatActivity {
         currentPeopleText.setText(Integer.toString(event.getPeopleHave()));
     }
 
-
+    public void joinEvent(View v){
+        event.joinEvent();
+        Toast.makeText(EventActivity.this, "See you there!", Toast.LENGTH_SHORT).show();
+        finish();
+    }
 
 }

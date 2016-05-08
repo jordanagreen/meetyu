@@ -56,4 +56,10 @@ public class Event {
     public String toString(){
         return title;
     }
+
+    void joinEvent(){
+        if (peopleHave < peopleNeeded){
+            peopleHave++;
+        }
+    }
 }
