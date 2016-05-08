@@ -1,28 +1,55 @@
 package yumeet.freebird.yumeet;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+import junit.framework.TestCase;
 
-public class EventActivity extends FragmentActivity {
+public class EventActivity extends AppCompatActivity {
+
+    private TextView titleText;
+    private TextView descText;
+    private TextView locationText;
+    private TextView startText;
+    private TextView peopleText;
+    private TextView currentPeopleText;
+
+//    private int eventId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+        Intent intent = getIntent();
 
 
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment eventFragmentList = fm.findFragmentById(R.id.EventListFragment);
+        titleText = (TextView) findViewById(R.id.eventTitle);
+        descText = (TextView) findViewById(R.id.eventDescription);
+        locationText = (TextView) findViewById(R.id.eventLocation);
+        startText = (TextView) findViewById(R.id.eventStartTime);
+        peopleText = (TextView) findViewById(R.id.eventPeopleNeeded);
+        currentPeopleText = (TextView) findViewById(R.id.eventCurrentPeople);
 
-        if (eventFragmentList == null) {
-            eventFragmentList = new EventFragmentList();
-            fm.beginTransaction()
-                    .add(R.id.EventListFragment, eventFragmentList)
-                    .commit();
-        }
+        int eventId = intent.getIntExtra(EventFragmentList.EVENT_ID_KEY, 0);
+
+        Event event = EventManager.getManager().getEvent(eventId);
+        setEventText(event);
+
+//        TextView titleTextView = (TextView) findViewById(R.id.eventTitle);
+//        Event event = EventManager.getManager().getEvent(eventId);
+//        titleTextView.setText(event.getDescription());
     }
+
+    private void setEventText(Event event){
+        titleText.setText(event.getTitle());
+        descText.setText(event.getDescription());
+        locationText.setText(event.getLocation());
+
+    }
+
+
 
 }
